@@ -41,17 +41,17 @@ Create your input using the following boilerplate to get started:
     <label for="example">Choose a country from the list</label>
     <div class="input-autocomplete">
         <input id="example" name="example" type="text" placeholder="Start typing..." value="" x-ref="input" autocomplete="off">
-        <div id="example-input-list" class="input-list" role="combobox list" x-ref="options">
-            <template x-for="option in options">
+        <div id="example-input-list" class="input-list" role="combobox list" x-ref="items">
+            <template x-for="item in items">
                 <div tabindex="0"
                     class="input-list-item"
-                    data-id="option.id"
-                    data-value="option.value"
-                    x-html="option.content"
-                    x-bind:class="{'is-selected': value == option.value}"
-                    x-on:keydown.stop.prevent="optionKeyPressed(option.value, option.id)"
-                    x-on:click="set(option.value)"
-                    role="combobox option">
+                    data-id="item.id"
+                    data-value="item.value"
+                    x-html="item.content"
+                    x-bind:class="{'is-selected': value == item.value}"
+                    x-on:keydown.stop.prevent="itemKeyPressed(item.value, item.id)"
+                    x-on:click="set(item.value)"
+                    role="combobox item">
                 </div>
             </template>
         </div>
