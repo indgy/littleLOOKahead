@@ -2,15 +2,18 @@
 .PHONY: dist
 
 dist:
-	# minify javascript
+	# minify javascript from src to dist
 	esbuild \
 		--minify \
 		--outfile=dist/littleLOOKahead.min.js \
 		src/littleLOOKahead.js 
+	# copy minified file to examples
 	cp dist/littleLOOKahead.min.js examples/littleLOOKahead.min.js
+	# gzip and list just to eyeball filesizes
 	gzip -c dist/littleLOOKahead.min.js > dist/littleLOOKahead.gz
 	ls -alh dist
 
-tidy: 
-	# prettify the code
+prettify: 
+	# prettify the code - 
+	# CAUTION this will clobber the file, hopefully not too badly
 	prettier -w src/littleLOOKahead.js 
