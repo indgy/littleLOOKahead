@@ -1,0 +1,46 @@
+/* required to position the dropdown input list correctly */
+.input-autocomplete {
+    position: relative;
+}
+/* use custom focus style, set this to match your focus style */
+input.has-focus {
+    box-shadow:0 0 0 .125rem #3689e6;
+    border-color:#3689e6;
+    outline: none;
+}
+/* shows the input list when required */
+.is-autocomplete input[aria-expanded=true] + .input-list {
+    display:block;
+}
+/* styles the input-list container */
+.is-autocomplete .input-list {
+    background: white; /* control fill colour */
+    display: none;
+    position: absolute;
+    top:2.5rem; /* height of control */
+    left:0;
+    right:0;
+    max-height: 15vh;
+    border:2px solid #ccc;
+    overflow-y:scroll;
+    width:auto;
+    z-index: 100; /* var control height dropdown */
+}
+/* styles the input-list item */
+.is-autocomplete .input-list-item {
+    padding:0.2rem 0.25rem;
+}
+/* the input-list item focus and hover styles */
+.is-autocomplete .input-list-item:hover,
+.is-autocomplete .input-list-item:focus {
+    border:none;
+    background:#def;
+    outline:none;
+}
+/* the input-list item selected style */
+.is-autocomplete .input-list-item.is-selected,
+.is-autocomplete .input-list-item:focus.is-selected
+.is-autocomplete .input-list-item:hover.is-selected {
+    background:#0d52bf;
+    color:white;
+}

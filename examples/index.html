@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>LittleLookahead</title>
+    <link rel="stylesheet" href="/examples/generic.min.css">
+    <link rel="stylesheet" href="/examples/littleLOOKahead.css">
+    <style>
+    /* just used in the example */
+    .is-autocomplete .input-list-item img {
+        height:2rem;
+        width:2rem;
+    }
+    </style>
+</head>
+<body>
+    <form action="#" method="get" autocomplete="off" style="padding:2rem">
+        <div class="field is-autocomplete" x-data="littleLOOKahead({url: '/examples/json.php'})">
+            <label for="example">Choose a country from the list</label>
+            <div class="input-autocomplete" style="max-width:320px">
+                <input id="example" name="example" type="text" placeholder="Start typing..." value="" x-ref="input"  autocomplete="off">
+                <div id="example-input-list" class="input-list" role="combobox list" x-ref="items">
+                    <template x-for="item in items">
+                        <div tabindex="0" 
+                            class="input-list-item"
+                            data-id="item.id"
+                            data-value="item.value"
+                            x-html="item.content"
+                            x-bind:class="{'is-selected': value == item.value}"
+                            x-on:keydown.stop.prevent="itemKeyPressed(item.value, item.id)"
+                            x-on:click="set(item.value)"
+                            role="combobox option">
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <button>Send</button>
+    </form>
+    <script src="/examples/littleLOOKahead.min.js"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+</body>
+</html>
