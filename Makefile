@@ -9,6 +9,8 @@ dist:
 		src/littleLOOKahead.js 
 	# copy minified file to examples
 	cp dist/littleLOOKahead.min.js examples/littleLOOKahead.min.js
+	# copy css to examples
+	cp src/littleLOOKahead.css examples/littleLOOKahead.css
 	# gzip and list just to eyeball filesizes
 	gzip -c dist/littleLOOKahead.min.js > dist/littleLOOKahead.gz
 	ls -alh dist
