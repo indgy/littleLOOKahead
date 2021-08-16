@@ -6,6 +6,8 @@ using AlpineJS (v3).
 ## In action
 ![Screenshot](screenshot.gif)
 
+See the [demo here](https://littlelookahead.indgy.uk/examples/index.html)
+
 ## Usage
 
 littleLOOKahead is fully accessible via the keyboard, just focus and start
