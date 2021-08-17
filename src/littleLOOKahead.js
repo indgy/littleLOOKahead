@@ -33,7 +33,7 @@ function littleLOOKahead(settings) {
           // set all this in code
           this.value = this.$refs.input.getAttribute('value');
           this.$refs.input.setAttribute('x-model', 'value');
-          this.$refs.input.setAttribute('x-on:keyup', 'inputKeyPressed()');
+          this.$refs.input.setAttribute('x-on:keyup.debounce', 'inputKeyPressed()');
           this.$refs.input.setAttribute('x-on:click', 'show()');
           this.$refs.input.setAttribute('role', 'combobox');
           this.$refs.input.setAttribute('aria-autocomplete', 'false');
