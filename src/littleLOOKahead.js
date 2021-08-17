@@ -91,12 +91,9 @@ function littleLOOKahead(settings) {
           }
         },
         fetch: function() {
-          // fetch items from remote url
-          if ( ! this.settings.url) {
-            return;
-          }
           if (this.state.loading) {
             // still sending, wait for this to complete
+            // TODO handle throttling and debouncing here
             return;
           }
           this.state.loading = true;
