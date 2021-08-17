@@ -8,7 +8,36 @@
     <link rel="stylesheet" href="/examples/generic.min.css">
     <link rel="stylesheet" href="/examples/littleLOOKahead.css">
     <style>
-    /* just used in the example */
+    :root {
+        font-family: system-ui, sans-serif;
+        --blue: #139;
+        --gray: #667;
+    }
+    /* Styles required for this example, please see the littleLOOKahead.css file for the customisable control styles */
+    button, input {
+        appearance: none;
+        outline: none;
+        border: 2px solid var(--blue);
+        border-radius: 3px;
+        font-size:1rem;
+        padding: 0.5rem;
+        margin: 0 0 0.5rem;
+    }
+    button {
+        background: var(--blue);
+        border: 1px solid rgba(0,0,0,0.1);
+        color:white;
+        padding: 0.5rem 1rem;
+    }
+    button:hover {
+        cursor: pointer;
+    }
+    label {
+        display: inline-block;
+        margin: 0 0 0.25rem;
+        color:var(--gray);
+        font-size:0.9rem;
+    }
     .is-autocomplete .input-list-item img {
         height:2rem;
         width:2rem;
