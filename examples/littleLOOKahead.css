@@ -4,8 +4,8 @@
 }
 /* use custom focus style, set this to match your focus style */
 input.has-focus {
-    box-shadow:0 0 0 .125rem #3689e6;
-    border-color:#3689e6;
+    box-shadow:0 0 0 .125rem var(--blue);
+    border-color: var(--blue);
     outline: none;
 }
 /* shows the input list when required */
@@ -21,7 +21,7 @@ input.has-focus {
     left:0;
     right:0;
     max-height: 15vh;
-    border:2px solid #ccc;
+    border:2px solid var(--light);
     overflow-y:scroll;
     width:auto;
     z-index: 100; /* var control height dropdown */
@@ -34,13 +34,13 @@ input.has-focus {
 .is-autocomplete .input-list-item:hover,
 .is-autocomplete .input-list-item:focus {
     border:none;
-    background:#def;
+    background:var(--light);
     outline:none;
 }
 /* the input-list item selected style */
 .is-autocomplete .input-list-item.is-selected,
 .is-autocomplete .input-list-item:focus.is-selected
 .is-autocomplete .input-list-item:hover.is-selected {
-    background:#0d52bf;
+    background:var(--blue);
     color:white;
 }
