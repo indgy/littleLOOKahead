@@ -12,7 +12,7 @@ $offset = 0;
 if (isset($_GET['limit'])) {
     $limit = (int) $_GET['limit'];
     if ($limit < 1) {
-        $limit = 1;
+        $limit = 10;
     }
 }
 if (isset($_GET['sort'])) {
@@ -39,6 +39,8 @@ if (isset($_GET['search'])) {
         return false;
     });
 }
+// do limit 
+$data = array_slice($data, 0, $limit);
 // format content
 foreach ($data as &$item)
 {
